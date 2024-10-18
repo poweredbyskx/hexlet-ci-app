@@ -1,18 +1,20 @@
-setup: install build
 
-install:
+.PHONY: setup start test lint
+
+setup:
+	@echo "Setting up the Strapi application..."
 	npm install
-
-build:
-	npm run build
+	@echo "Setup complete."
 
 start:
-	npm start
+	@echo "Starting the Strapi application..."
+	npm run develop
 
 test:
+	@echo "Running tests..."
 	npm test
 
 lint:
-	npx eslint .
+	@echo "Running linter..."
+	npm run lint
 
-.PHONY: build
